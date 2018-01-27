@@ -61,4 +61,17 @@
         android:layout_alignLeft="@+id/editText2"
         android:layout_alignStart="@+id/editText2" />
 
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/textView4"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/textView4"
+        android:layout_marginBottom="26dp"
+        android:text="Join Success"
+        android:onClick="goToRoom"
+        />
+
+
 </RelativeLayout>
