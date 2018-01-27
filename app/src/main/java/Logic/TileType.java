@@ -5,5 +5,8 @@ package Logic;
  */
 
 public enum TileType {
-    DOTS, BAMBOO, CHARACTERS, DRAGONS, WIND, FLOWERS;
+    DOTS, BAMBOO, CHARACTERS,
+    DRAGONS,
+    WINDS,
+    FLOWERS, SEASONS;
 }

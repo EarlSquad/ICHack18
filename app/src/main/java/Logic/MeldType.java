@@ -5,5 +5,5 @@ package Logic;
  */
 
 public enum MeldType {
-    PONG, KONG, CHOW, EYES;
+    PONG, KONG, CHOW, INVALID;
 }
