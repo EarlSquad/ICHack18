@@ -1,0 +1,3 @@
+[submodule "ICHack18Server"]
+	path = ICHack18Server
+	url = git@github.com:EarlSquad/ICHack18Server.git
