@@ -40,7 +40,7 @@ public class RoomManager {
     });
   }
 
-  public void joinRoom(String roomName, final String userName, final JoinRoomErrorListener listener) {
+  public void joinRoom(String roomName, final String userName, final JoinRoomListener listener) {
     final DatabaseReference room = database.getReference(ROOMS).child(roomName);
     room.addListenerForSingleValueEvent(new ValueEventListener() {
       @Override
