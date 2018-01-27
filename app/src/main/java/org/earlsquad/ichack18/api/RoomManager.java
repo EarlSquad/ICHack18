@@ -47,8 +47,9 @@ public class RoomManager {
       public void onDataChange(DataSnapshot dataSnapshot) {
         long userCount = dataSnapshot.getChildrenCount();
         if (userCount < 4) {
-          room.child(USERS).push().setValue(userName);
-          if (listener != null) listener.joinSuccessful();
+          String userId = room.child(USERS).push().getKey();
+          room.child(USERS).child(userId).setValue(userName);
+          if (listener != null) listener.joinSuccessful(userId);
         } else {
           if (listener != null) listener.roomFullError();
         }
