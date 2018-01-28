@@ -27,7 +27,7 @@
         android:ems="10"
         android:fontFamily="casual"
         android:inputType="textPersonName"
-        android:text="How about room name ?"
+        android:hint="How about room name ?"
         android:textAppearance="@style/TextAppearance.AppCompat"
         android:textSize="18sp" />
 
@@ -42,7 +42,7 @@
         android:ems="10"
         android:fontFamily="casual"
         android:inputType="textPersonName"
-        android:text="What is your name ?" />
+        android:hint="What is your name ?" />
 
     <Button
         android:id="@+id/button"
