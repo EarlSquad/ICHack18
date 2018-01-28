@@ -5,16 +5,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
-public class MainJoinRoom extends AppCompatActivity {
+public class Room extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.joinroom);
+        setContentView(R.layout.activity_room);
     }
 
-
-    public void goToRoom(View v){
-        startActivity(new Intent(MainJoinRoom.this, Room.class));
+    public void goToTakepic(View v){
+        startActivity(new Intent(Room.this, TakePic.class));
     }
 }
