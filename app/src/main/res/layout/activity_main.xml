@@ -34,31 +34,34 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@mipmap/host_new_room"
-        app:layout_constraintBottom_toTopOf="@+id/imageView7"
+        android:onClick="goToRoomCreation"
+        app:layout_constraintBottom_toTopOf="@+id/button3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView6" />
 
-    <ImageView
-        android:id="@+id/imageView7"
+    <Button
+        android:id="@+id/button3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/imageView10"
+        android:background="@mipmap/continue1"
+        app:layout_constraintBottom_toTopOf="@+id/button4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button11"
-        app:srcCompat="@mipmap/continue1" />
+        app:layout_constraintTop_toBottomOf="@+id/button11" />
 
-    <ImageView
-        android:id="@+id/imageView10"
+    <Button
+        android:id="@+id/button4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@mipmap/join_new_room"
+        android:onClick="goToJoinRoom"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView7"
-        app:srcCompat="@mipmap/join_new_room" />
+        app:layout_constraintTop_toBottomOf="@+id/button3" />
+
 </android.support.constraint.ConstraintLayout>

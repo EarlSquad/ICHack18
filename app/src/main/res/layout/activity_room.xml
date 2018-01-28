@@ -64,7 +64,8 @@
                 android:layout_marginStart="22dp"
                 android:layout_toEndOf="@+id/textView24"
                 android:layout_toRightOf="@+id/textView24"
-                android:background="@mipmap/OpenCamera1" />
+                android:background="@mipmap/opencamera"
+                android:onClick="goToTakepic" />
 
             <Button
                 android:id="@+id/button7"
@@ -290,40 +291,6 @@
                     android:textSize="18sp" />
 
                 <TextView
-                    android:id="@+id/textView36"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/textView35"
-                    android:layout_toEndOf="@+id/imageView24"
-                    android:layout_toRightOf="@+id/imageView24"
-                    android:text="Total: "
-                    android:textSize="18sp" />
-
-                <EditText
-                    android:id="@+id/editText13"
-                    style="@style/Widget.AppCompat.AutoCompleteTextView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignBottom="@+id/textView26"
-                    android:layout_toEndOf="@+id/textView26"
-                    android:layout_toRightOf="@+id/textView26"
-                    android:ems="10"
-                    android:inputType="number"
-                    android:text="LoseNum" />
-
-                <EditText
-                    android:id="@+id/editText14"
-                    style="@style/Widget.AppCompat.AutoCompleteTextView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignTop="@+id/textView27"
-                    android:layout_toEndOf="@+id/textView26"
-                    android:layout_toRightOf="@+id/textView26"
-                    android:ems="10"
-                    android:inputType="number"
-                    android:text="total" />
-
-                <TextView
                     android:id="@+id/textView37"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -332,48 +299,6 @@
                     android:layout_alignParentRight="true"
                     android:fontFamily="casual"
                     android:text="Wind" />
-
-                <EditText
-                    android:id="@+id/editText15"
-                    style="@style/Widget.AppCompat.AutoCompleteTextView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_above="@+id/textView29"
-                    android:layout_below="@+id/textView21"
-                    android:layout_toEndOf="@+id/textView28"
-                    android:layout_toRightOf="@+id/textView28"
-                    android:ems="10"
-                    android:inputType="number"
-                    android:text="WinNum" />
-
-                <EditText
-                    android:id="@+id/editText16"
-                    style="@style/Widget.AppCompat.AutoCompleteTextView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_above="@+id/textView30"
-                    android:layout_below="@+id/editText15"
-                    android:layout_toEndOf="@+id/textView29"
-                    android:layout_toLeftOf="@+id/textView37"
-                    android:layout_toRightOf="@+id/textView29"
-                    android:layout_toStartOf="@+id/textView37"
-                    android:ems="10"
-                    android:inputType="number"
-                    android:text="LoseNum" />
-
-                <EditText
-                    android:id="@+id/editText17"
-                    style="@style/Widget.AppCompat.AutoCompleteTextView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignEnd="@+id/editText16"
-                    android:layout_alignRight="@+id/editText16"
-                    android:layout_alignTop="@+id/textView30"
-                    android:layout_toEndOf="@+id/textView30"
-                    android:layout_toRightOf="@+id/textView30"
-                    android:ems="10"
-                    android:inputType="number"
-                    android:text="total" />
 
                 <TextView
                     android:id="@+id/textView38"
@@ -385,43 +310,6 @@
                     android:fontFamily="casual"
                     android:text="Wind" />
 
-                <EditText
-                    android:id="@+id/editText18"
-                    style="@style/Widget.AppCompat.AutoCompleteTextView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignBaseline="@+id/textView31"
-                    android:layout_alignBottom="@+id/textView31"
-                    android:layout_toEndOf="@+id/textView31"
-                    android:layout_toRightOf="@+id/textView31"
-                    android:ems="10"
-                    android:inputType="number"
-                    android:text="WinNum" />
-
-                <EditText
-                    android:id="@+id/editText19"
-                    style="@style/Widget.AppCompat.AutoCompleteTextView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/editText18"
-                    android:layout_toEndOf="@+id/textView32"
-                    android:layout_toRightOf="@+id/textView32"
-                    android:ems="10"
-                    android:inputType="number"
-                    android:text="LoseNum" />
-
-                <EditText
-                    android:id="@+id/editText20"
-                    style="@style/Widget.AppCompat.AutoCompleteTextView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/editText19"
-                    android:layout_toEndOf="@+id/textView33"
-                    android:layout_toRightOf="@+id/textView33"
-                    android:ems="10"
-                    android:inputType="number"
-                    android:text="total" />
-
                 <TextView
                     android:id="@+id/textView39"
                     android:layout_width="wrap_content"
@@ -431,47 +319,6 @@
                     android:layout_alignParentRight="true"
                     android:fontFamily="casual"
                     android:text="Wind" />
-
-                <EditText
-                    android:id="@+id/editText21"
-                    style="@style/Widget.AppCompat.AutoCompleteTextView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignBottom="@+id/textView34"
-                    android:layout_below="@+id/textView22"
-                    android:layout_toEndOf="@+id/textView34"
-                    android:layout_toLeftOf="@+id/textView39"
-                    android:layout_toRightOf="@+id/textView34"
-                    android:layout_toStartOf="@+id/textView39"
-                    android:ems="10"
-                    android:inputType="number"
-                    android:text="WinNum" />
-
-                <EditText
-                    android:id="@+id/editText22"
-                    style="@style/Widget.AppCompat.AutoCompleteTextView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignEnd="@+id/editText17"
-                    android:layout_alignRight="@+id/editText17"
-                    android:layout_below="@+id/editText21"
-                    android:layout_toEndOf="@+id/textView27"
-                    android:layout_toRightOf="@+id/textView27"
-                    android:ems="10"
-                    android:inputType="number"
-                    android:text="LoseNum" />
-
-                <EditText
-                    android:id="@+id/editText23"
-                    style="@style/Widget.AppCompat.AutoCompleteTextView"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/editText22"
-                    android:layout_toEndOf="@+id/textView36"
-                    android:layout_toRightOf="@+id/textView36"
-                    android:ems="10"
-                    android:inputType="number"
-                    android:text="total" />
 
                 <TextView
                     android:id="@+id/textView41"
@@ -483,20 +330,125 @@
                     android:fontFamily="casual"
                     android:text="Wind" />
 
-                <EditText
-                    android:id="@+id/editText25"
-                    style="@style/Widget.AppCompat.AutoCompleteTextView"
+                <TextView
+                    android:id="@+id/textView44"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/textView35"
+                    android:layout_toEndOf="@+id/textView27"
+                    android:layout_toRightOf="@+id/textView27"
+                    android:text="WinNum" />
+
+                <TextView
+                    android:id="@+id/textView46"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/textView35"
+                    android:layout_alignBottom="@+id/textView35"
+                    android:layout_toEndOf="@+id/textView33"
+                    android:layout_toRightOf="@+id/textView33"
+                    android:text="LoseNum" />
+
+                <TextView
+                    android:id="@+id/textView47"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView35"
+                    android:layout_toEndOf="@+id/imageView24"
+                    android:layout_toRightOf="@+id/imageView24"
+                    android:text="Total: " />
+
+                <TextView
+                    android:id="@+id/textView48"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/textView46"
+                    android:layout_alignStart="@+id/textView46"
+                    android:layout_below="@+id/textView35"
+                    android:text="total" />
+
+                <TextView
+                    android:id="@+id/textView49"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/textView32"
+                    android:layout_toEndOf="@+id/textView47"
+                    android:layout_toRightOf="@+id/textView47"
+                    android:text="WinNum" />
+
+                <TextView
+                    android:id="@+id/textView50"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/textView33"
+                    android:layout_toEndOf="@+id/textView33"
+                    android:layout_toRightOf="@+id/textView33"
+                    android:text="LoseNum" />
+
+                <TextView
+                    android:id="@+id/textView51"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/textView33"
+                    android:layout_toEndOf="@+id/textView33"
+                    android:layout_toRightOf="@+id/textView33"
+                    android:text="total" />
+
+                <TextView
+                    android:id="@+id/textView52"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_above="@+id/textView26"
-                    android:layout_alignEnd="@+id/editText15"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignRight="@+id/editText15"
-                    android:layout_toEndOf="@+id/textView25"
-                    android:layout_toRightOf="@+id/textView25"
-                    android:ems="10"
-                    android:inputType="number"
+                    android:layout_toEndOf="@+id/textView28"
+                    android:layout_toRightOf="@+id/textView28"
                     android:text="WinNum" />
+
+                <TextView
+                    android:id="@+id/textView53"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/textView26"
+                    android:layout_alignBottom="@+id/textView26"
+                    android:layout_toEndOf="@+id/textView29"
+                    android:layout_toRightOf="@+id/textView29"
+                    android:text="LoseNum" />
+
+                <TextView
+                    android:id="@+id/textView54"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/textView27"
+                    android:layout_alignBottom="@+id/textView27"
+                    android:layout_toEndOf="@+id/textView30"
+                    android:layout_toRightOf="@+id/textView30"
+                    android:text="total" />
+
+                <TextView
+                    android:id="@+id/textView55"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/textView29"
+                    android:layout_alignLeft="@+id/textView49"
+                    android:layout_alignStart="@+id/textView49"
+                    android:text="winNum" />
+
+                <TextView
+                    android:id="@+id/textView56"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/textView29"
+                    android:layout_toEndOf="@+id/textView30"
+                    android:layout_toRightOf="@+id/textView30"
+                    android:text="loseNum" />
+
+                <TextView
+                    android:id="@+id/textView57"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/textView30"
+                    android:layout_toEndOf="@+id/textView30"
+                    android:layout_toRightOf="@+id/textView30"
+                    android:text="total" />
 
             </RelativeLayout>
         </LinearLayout>
