@@ -6,7 +6,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" >
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -16,6 +16,7 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="@mipmap/small_background"
             tools:context="org.earlsquad.ichack18.MainRoomCreation">
 
             <TextView
@@ -27,54 +28,56 @@
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="23dp"
                 android:layout_marginStart="23dp"
-                android:text="Room" />
+                android:text="Room_Name" />
 
             <TextView
                 android:id="@+id/textView11"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignBottom="@+id/textView10"
-                android:layout_alignTop="@+id/textView10"
-                android:layout_marginLeft="11dp"
-                android:layout_marginStart="11dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="31dp"
+                android:layout_marginStart="31dp"
                 android:layout_toEndOf="@+id/textView10"
                 android:layout_toRightOf="@+id/textView10"
                 android:text="Cycle" />
-
-
 
 
             <TextView
                 android:id="@+id/textView24"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignTop="@+id/textView11"
-                android:layout_marginLeft="12dp"
-                android:layout_marginStart="12dp"
+                android:layout_alignBaseline="@+id/textView11"
+                android:layout_alignBottom="@+id/textView11"
+                android:layout_marginLeft="44dp"
+                android:layout_marginStart="44dp"
                 android:layout_toEndOf="@+id/textView11"
                 android:layout_toRightOf="@+id/textView11"
                 android:text="Wind" />
-            <Button
-                android:id="@+id/button4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@color/paleGreen"
-                android:text="History"
-                android:textSize="10dp"
-                android:layout_alignBaseline="@+id/textView24"
-                android:layout_alignBottom="@+id/textView24"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true" />
 
             <Button
                 android:id="@+id/button5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_alignTop="@+id/button4"
-                android:layout_toLeftOf="@+id/button4"
-                android:layout_toStartOf="@+id/button4"
-                android:text="takePIC"
-                android:onClick="goToTakepic"/>
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignBaseline="@+id/textView24"
+                android:layout_alignBottom="@+id/textView24"
+                android:layout_marginLeft="22dp"
+                android:layout_marginStart="22dp"
+                android:layout_toEndOf="@+id/textView24"
+                android:layout_toRightOf="@+id/textView24"
+                android:background="@mipmap/opencamera"
+                android:onClick="goToTakepic" />
+
+            <Button
+                android:id="@+id/button7"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignBottom="@+id/button5"
+                android:layout_alignTop="@+id/button5"
+                android:layout_marginLeft="12dp"
+                android:layout_marginStart="12dp"
+                android:layout_toEndOf="@+id/button5"
+                android:layout_toRightOf="@+id/button5"
+                android:background="@mipmap/history" />
 
 
         </RelativeLayout>
@@ -84,486 +87,368 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1.0"
-        android:orientation="horizontal" >
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1.0"
-            android:orientation="vertical"
-            android:background="@color/gold">
-
-            <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:app="http://schemas.android.com/apk/res-auto"
-            xmlns:tools="http://schemas.android.com/tools"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            tools:context="org.earlsquad.ichack18.MainRoomCreation">
-
-
-                <TextView
-                    android:id="@+id/textView90"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="17dp"
-                    android:layout_marginStart="17dp"
-                    android:layout_marginTop="30dp"
-                    android:text="Name"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true" />
-
-                <TextView
-                    android:id="@+id/textView130"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Wind"
-                    android:layout_alignBaseline="@+id/textView90"
-                    android:layout_alignBottom="@+id/textView90"
-                    android:layout_alignParentRight="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginRight="15dp"
-                    android:layout_marginEnd="15dp" />
-
-                <TextView
-                    android:id="@+id/textView150"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="27dp"
-                    android:text="Win:"
-                    android:layout_below="@+id/textView90"
-                    android:layout_alignLeft="@+id/textView90"
-                    android:layout_alignStart="@+id/textView90" />
-
-                <TextView
-                    android:id="@+id/textView160"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="25dp"
-                    android:text="Lose:"
-                    android:layout_below="@+id/textView150"
-                    android:layout_alignLeft="@+id/textView150"
-                    android:layout_alignStart="@+id/textView150" />
-
-                <TextView
-                    android:id="@+id/textView170"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="19dp"
-                    android:text="Streaks:"
-                    android:layout_below="@+id/textView160"
-                    android:layout_alignLeft="@+id/textView160"
-                    android:layout_alignStart="@+id/textView160" />
-
-                <TextView
-                    android:id="@+id/textView190"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="winNum"
-                    android:layout_above="@+id/textView160"
-                    android:layout_alignLeft="@+id/textView200"
-                    android:layout_alignStart="@+id/textView200" />
-
-                <TextView
-                    android:id="@+id/textView200"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="loseNum"
-                    android:layout_above="@+id/textView170"
-                    android:layout_alignLeft="@+id/textView210"
-                    android:layout_alignStart="@+id/textView210" />
-
-                <TextView
-                    android:id="@+id/textView210"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_alignTop="@+id/textView170"
-                    android:text="streakNum" />
-
-                <TextView
-                    android:id="@+id/textView220"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignLeft="@+id/textView170"
-                    android:layout_alignStart="@+id/textView170"
-                    android:layout_below="@+id/textView170"
-                    android:layout_marginTop="15dp"
-                    android:text="Total"
-                    android:layout_alignRight="@+id/textView90"
-                    android:layout_alignEnd="@+id/textView90" />
-
-                <TextView
-                    android:id="@+id/textView230"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignLeft="@+id/textView210"
-                    android:layout_alignStart="@+id/textView210"
-                    android:layout_alignTop="@+id/textView220"
-                    android:text="score" />
-            </RelativeLayout>
-        </LinearLayout>
+        android:orientation="horizontal">
 
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1.0"
-            android:orientation="vertical"
-            android:background="@color/lightpink">
-            <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            xmlns:app="http://schemas.android.com/apk/res-auto"
-            xmlns:tools="http://schemas.android.com/tools"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            tools:context="org.earlsquad.ichack18.MainRoomCreation">
-                <TextView
-                    android:id="@+id/textView91"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="17dp"
-                    android:layout_marginStart="17dp"
-                    android:layout_marginTop="30dp"
-                    android:text="Name"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true" />
-
-                <TextView
-                    android:id="@+id/textView131"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Wind"
-                    android:layout_alignBaseline="@+id/textView91"
-                    android:layout_alignBottom="@+id/textView91"
-                    android:layout_alignParentRight="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginRight="15dp"
-                    android:layout_marginEnd="15dp" />
-
-                <TextView
-                    android:id="@+id/textView151"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="27dp"
-                    android:text="Win:"
-                    android:layout_below="@+id/textView91"
-                    android:layout_alignLeft="@+id/textView91"
-                    android:layout_alignStart="@+id/textView91" />
-
-                <TextView
-                    android:id="@+id/textView161"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="25dp"
-                    android:text="Lose:"
-                    android:layout_below="@+id/textView151"
-                    android:layout_alignLeft="@+id/textView151"
-                    android:layout_alignStart="@+id/textView151" />
-
-                <TextView
-                    android:id="@+id/textView171"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="19dp"
-                    android:text="Streaks:"
-                    android:layout_below="@+id/textView161"
-                    android:layout_alignLeft="@+id/textView161"
-                    android:layout_alignStart="@+id/textView161" />
-
-                <TextView
-                    android:id="@+id/textView191"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="winNum"
-                    android:layout_above="@+id/textView161"
-                    android:layout_alignLeft="@+id/textView201"
-                    android:layout_alignStart="@+id/textView201" />
-
-                <TextView
-                    android:id="@+id/textView201"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="loseNum"
-                    android:layout_above="@+id/textView171"
-                    android:layout_alignLeft="@+id/textView211"
-                    android:layout_alignStart="@+id/textView211" />
-
-                <TextView
-                    android:id="@+id/textView211"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_alignTop="@+id/textView171"
-                    android:text="streakNum" />
-
-                <TextView
-                    android:id="@+id/textView221"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignLeft="@+id/textView171"
-                    android:layout_alignStart="@+id/textView171"
-                    android:layout_below="@+id/textView171"
-                    android:layout_marginTop="15dp"
-                    android:text="Total"
-                    android:layout_alignRight="@+id/textView91"
-                    android:layout_alignEnd="@+id/textView91" />
-
-                <TextView
-                    android:id="@+id/textView231"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignLeft="@+id/textView211"
-                    android:layout_alignStart="@+id/textView211"
-                    android:layout_alignTop="@+id/textView221"
-                    android:text="score" />
-
-            </RelativeLayout>
-        </LinearLayout>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1.0"
-        android:orientation="horizontal" >
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1.0"
-            android:orientation="vertical"
-            android:background="@color/lightblue">
-            <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:app="http://schemas.android.com/apk/res-auto"
-                xmlns:tools="http://schemas.android.com/tools"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                tools:context="org.earlsquad.ichack18.MainRoomCreation">
-
-                <TextView
-                    android:id="@+id/textView92"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="17dp"
-                    android:layout_marginStart="17dp"
-                    android:layout_marginTop="30dp"
-                    android:text="Name"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true" />
-
-                <TextView
-                    android:id="@+id/textView132"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Wind"
-                    android:layout_alignBaseline="@+id/textView92"
-                    android:layout_alignBottom="@+id/textView92"
-                    android:layout_alignParentRight="true"
-                    android:layout_alignParentEnd="true"
-                    android:layout_marginRight="15dp"
-                    android:layout_marginEnd="15dp" />
-
-                <TextView
-                    android:id="@+id/textView152"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="27dp"
-                    android:text="Win:"
-                    android:layout_below="@+id/textView92"
-                    android:layout_alignLeft="@+id/textView92"
-                    android:layout_alignStart="@+id/textView92" />
-
-                <TextView
-                    android:id="@+id/textView162"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="25dp"
-                    android:text="Lose:"
-                    android:layout_below="@+id/textView152"
-                    android:layout_alignLeft="@+id/textView152"
-                    android:layout_alignStart="@+id/textView152" />
-
-                <TextView
-                    android:id="@+id/textView172"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="19dp"
-                    android:text="Streaks:"
-                    android:layout_below="@+id/textView162"
-                    android:layout_alignLeft="@+id/textView162"
-                    android:layout_alignStart="@+id/textView162" />
-
-                <TextView
-                    android:id="@+id/textView192"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="winNum"
-                    android:layout_above="@+id/textView162"
-                    android:layout_alignLeft="@+id/textView202"
-                    android:layout_alignStart="@+id/textView202" />
-
-                <TextView
-                    android:id="@+id/textView202"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="loseNum"
-                    android:layout_above="@+id/textView172"
-                    android:layout_alignLeft="@+id/textView212"
-                    android:layout_alignStart="@+id/textView212" />
-
-                <TextView
-                    android:id="@+id/textView212"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:layout_alignParentRight="true"
-                    android:layout_alignTop="@+id/textView172"
-                    android:text="streakNum" />
-
-                <TextView
-                    android:id="@+id/textView222"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignLeft="@+id/textView172"
-                    android:layout_alignStart="@+id/textView172"
-                    android:layout_below="@+id/textView172"
-                    android:layout_marginTop="15dp"
-                    android:text="Total"
-                    android:layout_alignRight="@+id/textView92"
-                    android:layout_alignEnd="@+id/textView92" />
-
-                <TextView
-                    android:id="@+id/textView232"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignLeft="@+id/textView212"
-                    android:layout_alignStart="@+id/textView212"
-                    android:layout_alignTop="@+id/textView222"
-                    android:text="score" />
-
-
-            </RelativeLayout>
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1.0"
-            android:orientation="vertical"
-            android:background="@color/lightgrey">
+            android:background="@mipmap/background"
+            android:orientation="vertical">
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                tools:context="org.earlsquad.ichack18.MainRoomCreation">
+                android:layout_height="match_parent">
 
-                <TextView
-                    android:id="@+id/textView93"
-                    android:layout_width="wrap_content"
+                <ImageView
+                    android:id="@+id/imageView21"
+                    android:layout_width="111dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="17dp"
-                    android:layout_marginStart="17dp"
-                    android:layout_marginTop="30dp"
-                    android:text="Name"
-                    android:layout_alignParentTop="true"
                     android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true" />
+                    android:layout_alignParentStart="true"
+                    app:srcCompat="@mipmap/majongman" />
 
                 <TextView
-                    android:id="@+id/textView133"
+                    android:id="@+id/textView21"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/imageView23"
+                    android:layout_alignStart="@+id/imageView23"
+                    android:layout_below="@+id/imageView21"
+                    android:fontFamily="casual"
+                    android:text="Player 1"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/imageView22"
+                    android:layout_width="111dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/textView21"
+                    android:layout_alignStart="@+id/textView21"
+                    android:layout_below="@+id/textView21"
+                    app:srcCompat="@mipmap/majongman2" />
+
+                <TextView
+                    android:id="@+id/textView23"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/imageView22"
+                    android:fontFamily="casual"
+                    android:text="Player 2"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/imageView23"
+                    android:layout_width="111dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignEnd="@+id/imageView24"
+                    android:layout_alignRight="@+id/imageView24"
+                    android:layout_below="@+id/textView23"
+                    app:srcCompat="@mipmap/majongman1" />
+
+                <TextView
+                    android:id="@+id/textView22"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/imageView23"
+                    android:fontFamily="casual"
+                    android:text="Player 3"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/imageView24"
+                    android:layout_width="112dp"
+                    android:layout_height="111dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/textView22"
+                    app:srcCompat="@mipmap/majongman4" />
+
+                <TextView
+                    android:id="@+id/textView40"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/imageView23"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignStart="@+id/imageView23"
+                    android:fontFamily="casual"
+                    android:text="Player 4"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/textView25"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Wind"
-                    android:layout_alignBaseline="@+id/textView93"
-                    android:layout_alignBottom="@+id/textView93"
-                    android:layout_alignParentRight="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_toEndOf="@+id/imageView21"
+                    android:layout_toRightOf="@+id/imageView21"
+                    android:text="Win: "
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/textView26"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView25"
+                    android:layout_toEndOf="@+id/imageView21"
+                    android:layout_toRightOf="@+id/imageView21"
+                    android:text="Lose: "
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/textView27"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView26"
+                    android:layout_toEndOf="@+id/imageView21"
+                    android:layout_toRightOf="@+id/imageView21"
+                    android:text="Total:"
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/textView28"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView21"
+                    android:layout_toEndOf="@+id/imageView22"
+                    android:layout_toRightOf="@+id/imageView22"
+                    android:text="Win: "
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/textView29"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView28"
+                    android:layout_toEndOf="@+id/imageView22"
+                    android:layout_toRightOf="@+id/imageView22"
+                    android:text="Lose: "
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/textView30"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView29"
+                    android:layout_toEndOf="@+id/imageView22"
+                    android:layout_toRightOf="@+id/imageView22"
+                    android:text="Total: "
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/textView31"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView23"
+                    android:layout_toEndOf="@+id/imageView23"
+                    android:layout_toRightOf="@+id/imageView23"
+                    android:text="Win: "
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/textView32"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView31"
+                    android:layout_toEndOf="@+id/imageView23"
+                    android:layout_toRightOf="@+id/imageView23"
+                    android:text="Lose: "
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/textView33"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView32"
+                    android:layout_toEndOf="@+id/imageView23"
+                    android:layout_toRightOf="@+id/imageView23"
+                    android:text="Total: "
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/textView34"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView22"
+                    android:layout_toEndOf="@+id/imageView24"
+                    android:layout_toRightOf="@+id/imageView24"
+                    android:text="Win: "
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/textView35"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView34"
+                    android:layout_toEndOf="@+id/imageView24"
+                    android:layout_toRightOf="@+id/imageView24"
+                    android:text="Lose: "
+                    android:textSize="18sp" />
+
+                <TextView
+                    android:id="@+id/textView37"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/textView21"
                     android:layout_alignParentEnd="true"
-                    android:layout_marginRight="15dp"
-                    android:layout_marginEnd="15dp" />
+                    android:layout_alignParentRight="true"
+                    android:fontFamily="casual"
+                    android:text="Wind" />
 
                 <TextView
-                    android:id="@+id/textView153"
+                    android:id="@+id/textView38"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="27dp"
-                    android:text="Win:"
-                    android:layout_below="@+id/textView93"
-                    android:layout_alignLeft="@+id/textView93"
-                    android:layout_alignStart="@+id/textView93" />
-
-                <TextView
-                    android:id="@+id/textView163"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="25dp"
-                    android:text="Lose:"
-                    android:layout_below="@+id/textView153"
-                    android:layout_alignLeft="@+id/textView153"
-                    android:layout_alignStart="@+id/textView153" />
-
-                <TextView
-                    android:id="@+id/textView173"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="19dp"
-                    android:text="Streaks:"
-                    android:layout_below="@+id/textView163"
-                    android:layout_alignLeft="@+id/textView163"
-                    android:layout_alignStart="@+id/textView163" />
-
-                <TextView
-                    android:id="@+id/textView193"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="winNum"
-                    android:layout_above="@+id/textView163"
-                    android:layout_alignLeft="@+id/textView203"
-                    android:layout_alignStart="@+id/textView203" />
-
-                <TextView
-                    android:id="@+id/textView203"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="loseNum"
-                    android:layout_above="@+id/textView173"
-                    android:layout_alignLeft="@+id/textView213"
-                    android:layout_alignStart="@+id/textView213" />
-
-                <TextView
-                    android:id="@+id/textView213"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/textView23"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentRight="true"
-                    android:layout_alignTop="@+id/textView173"
-                    android:text="streakNum" />
+                    android:fontFamily="casual"
+                    android:text="Wind" />
 
                 <TextView
-                    android:id="@+id/textView223"
+                    android:id="@+id/textView39"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignLeft="@+id/textView173"
-                    android:layout_alignStart="@+id/textView173"
-                    android:layout_below="@+id/textView173"
-                    android:layout_marginTop="15dp"
-                    android:text="Total"
-                    android:layout_alignRight="@+id/textView93"
-                    android:layout_alignEnd="@+id/textView93" />
+                    android:layout_alignBottom="@+id/imageView23"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:fontFamily="casual"
+                    android:text="Wind" />
 
                 <TextView
-                    android:id="@+id/textView233"
+                    android:id="@+id/textView41"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_alignLeft="@+id/textView213"
-                    android:layout_alignStart="@+id/textView213"
-                    android:layout_alignTop="@+id/textView223"
-                    android:text="score" />
+                    android:layout_above="@+id/textView40"
+                    android:layout_alignParentEnd="true"
+                    android:layout_alignParentRight="true"
+                    android:fontFamily="casual"
+                    android:text="Wind" />
+
+                <TextView
+                    android:id="@+id/textView44"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/textView35"
+                    android:layout_toEndOf="@+id/textView27"
+                    android:layout_toRightOf="@+id/textView27"
+                    android:text="WinNum" />
+
+                <TextView
+                    android:id="@+id/textView46"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/textView35"
+                    android:layout_alignBottom="@+id/textView35"
+                    android:layout_toEndOf="@+id/textView33"
+                    android:layout_toRightOf="@+id/textView33"
+                    android:text="LoseNum" />
+
+                <TextView
+                    android:id="@+id/textView47"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textView35"
+                    android:layout_toEndOf="@+id/imageView24"
+                    android:layout_toRightOf="@+id/imageView24"
+                    android:text="Total: " />
+
+                <TextView
+                    android:id="@+id/textView48"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignLeft="@+id/textView46"
+                    android:layout_alignStart="@+id/textView46"
+                    android:layout_below="@+id/textView35"
+                    android:text="total" />
+
+                <TextView
+                    android:id="@+id/textView49"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/textView32"
+                    android:layout_toEndOf="@+id/textView47"
+                    android:layout_toRightOf="@+id/textView47"
+                    android:text="WinNum" />
+
+                <TextView
+                    android:id="@+id/textView50"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/textView33"
+                    android:layout_toEndOf="@+id/textView33"
+                    android:layout_toRightOf="@+id/textView33"
+                    android:text="LoseNum" />
+
+                <TextView
+                    android:id="@+id/textView51"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/textView33"
+                    android:layout_toEndOf="@+id/textView33"
+                    android:layout_toRightOf="@+id/textView33"
+                    android:text="total" />
+
+                <TextView
+                    android:id="@+id/textView52"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/textView26"
+                    android:layout_toEndOf="@+id/textView28"
+                    android:layout_toRightOf="@+id/textView28"
+                    android:text="WinNum" />
+
+                <TextView
+                    android:id="@+id/textView53"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/textView26"
+                    android:layout_alignBottom="@+id/textView26"
+                    android:layout_toEndOf="@+id/textView29"
+                    android:layout_toRightOf="@+id/textView29"
+                    android:text="LoseNum" />
+
+                <TextView
+                    android:id="@+id/textView54"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/textView27"
+                    android:layout_alignBottom="@+id/textView27"
+                    android:layout_toEndOf="@+id/textView30"
+                    android:layout_toRightOf="@+id/textView30"
+                    android:text="total" />
+
+                <TextView
+                    android:id="@+id/textView55"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/textView29"
+                    android:layout_alignLeft="@+id/textView49"
+                    android:layout_alignStart="@+id/textView49"
+                    android:text="winNum" />
+
+                <TextView
+                    android:id="@+id/textView56"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/textView29"
+                    android:layout_toEndOf="@+id/textView30"
+                    android:layout_toRightOf="@+id/textView30"
+                    android:text="loseNum" />
+
+                <TextView
+                    android:id="@+id/textView57"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/textView30"
+                    android:layout_toEndOf="@+id/textView30"
+                    android:layout_toRightOf="@+id/textView30"
+                    android:text="total" />
 
             </RelativeLayout>
         </LinearLayout>
