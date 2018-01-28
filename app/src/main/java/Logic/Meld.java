@@ -29,6 +29,10 @@ public class Meld {
         this.tile = tile;
     }
 
+    public Tile getTile() {
+        return tile;
+    }
+
     @Override
     public String toString() {
         return meldType + " " + tile;

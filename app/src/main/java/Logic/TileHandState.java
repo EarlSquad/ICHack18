@@ -46,6 +46,7 @@ public class TileHandState {
         System.out.println();
         System.out.println("Eyes:");
         System.out.println(hands.getEyes());
+
         System.out.println();
     }
 }

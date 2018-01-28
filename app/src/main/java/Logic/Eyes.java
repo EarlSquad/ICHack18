@@ -11,6 +11,10 @@ public class Eyes {
         this.tile = tile;
     }
 
+    public Tile getTile() {
+        return tile;
+    }
+
     public String toString() {
         return tile.toString();
     }

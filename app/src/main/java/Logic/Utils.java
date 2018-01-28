@@ -13,7 +13,99 @@ import java.util.Set;
 
 public class Utils {
 
-    public static List<TileHandState> buildState(List<Tile> tiles) {
+    public static TileHandState getMaximumScoreState(List<TileHandState> states) {
+        int maxFan = 0;
+        TileHandState maxState = null;
+        for(int id = 0; id < states.size(); id++) {
+            maxFan = Math.max(maxFan, getScoreFromState(states.get(id), false));
+            maxState = states.get(id);
+        }
+        return maxState;
+    }
+
+    public static int getScoreFromState(TileHandState state, boolean showType) {
+        int fan = 0;
+        int max = 10;
+        Hand hand = state.getHands();
+        List<Meld> meld = hand.getMeld();
+        int chowCount = 0;
+        int pongCount = 0;
+        int honorCount = 0;
+        int dragonCount = 0;
+        int windCount = 0;
+        boolean dragonEye = false;
+        boolean windEye = false;
+        Set<TileType> simpleSuit = new HashSet<>();
+        for(int id = 0; id < meld.size(); id++) {
+            Meld indivMeld = meld.get(id);
+            if(indivMeld.getMeldType() == MeldType.CHOW) {
+                chowCount++;
+            } else if(indivMeld.getMeldType() == MeldType.PONG) {
+                pongCount++;
+            }
+            if(indivMeld.getTileType() == TileType.BAMBOO ||  indivMeld.getTileType() == TileType.CHARACTERS || indivMeld.getTileType() == TileType.DOTS) {
+                simpleSuit.add(indivMeld.getTileType());
+            } else if (indivMeld.getTileType() == TileType.DRAGONS){
+                honorCount++;
+                dragonCount++;
+            } else if (indivMeld.getTileType() == TileType.WINDS) {
+                honorCount++;
+                windCount++;
+            }
+        }
+        if(hand.getEyes().getTile().getType() == TileType.BAMBOO || hand.getEyes().getTile().getType() == TileType.CHARACTERS || hand.getEyes().getTile().getType() == TileType.DOTS) {
+            simpleSuit.add(hand.getEyes().getTile().getType());
+            dragonEye = false;
+        } else {
+            dragonEye = hand.getEyes().getTile().getType() == TileType.DRAGONS;
+            windEye = hand.getEyes().getTile().getType() == TileType.WINDS;
+        }
+        if(pongCount == 0 && chowCount == 4) {
+            if(showType)
+                System.out.println("Common Hand");
+            fan++;
+        }
+        if(pongCount == 4 && chowCount == 0) {
+            if(showType)
+                System.out.println("All in Triples");
+            fan += 3;
+        }
+        if(simpleSuit.size() == 1 && (dragonEye || honorCount > 0)) {
+            if(showType)
+                System.out.println("Mix One Suit");
+            fan += 3;
+        } else if((simpleSuit.size() == 1 && (!dragonEye && honorCount == 0))) {
+            if(showType)
+                System.out.println("All One Suit");
+            fan += 7;
+        }
+        if(dragonCount == 2 && dragonEye) {
+            if(showType)
+                System.out.println("Small Dragon");
+            fan  += 5;
+        }
+        if(dragonCount == 3) {
+            if(showType)
+                System.out.println("Great Dragon");
+            fan += 8;
+        }
+        if(windCount == 3 && windEye) {
+            if(showType)
+                System.out.println("Small Winds");
+            return max;
+        }
+        if(windCount == 4) {
+            if(showType)
+                System.out.println("Great Winds");
+            return max;
+        }
+        if(honorCount == 4 && (dragonEye || windEye)) {
+            return max;
+        }
+        return fan;
+    }
+
+    public static List<TileHandState> buildState(List<Tile> tiles, List<Meld> shownMelds) {
         List<TileHandState> newList = new ArrayList<>();
         Set<Tile> set = new HashSet<>();
         for(int pos1 = 0; pos1 < tiles.size(); pos1++) {
@@ -25,7 +117,7 @@ public class Utils {
                         set.add(tiles.get(pos1));
                         tileCopy.remove(tiles.get(pos1));
                         tileCopy.remove(tiles.get(pos2));
-                        newList.add(new TileHandState(tileCopy, new Hand(new Eyes(tile), new ArrayList<Meld>())));
+                        newList.add(new TileHandState(tileCopy, new Hand(new Eyes(tile), shownMelds)));
                     }
                 }
             }
@@ -82,19 +174,35 @@ public class Utils {
         tiles.add(new Tile(TileType.DOTS, 2));
         tiles.add(new Tile(TileType.DOTS, 2));
         tiles.add(new Tile(TileType.DOTS, 2));
-        tiles.add(new Tile(TileType.WINDS, 2));
-        tiles.add(new Tile(TileType.WINDS, 2));
-        tiles.add(new Tile(TileType.WINDS, 2));
-        tiles.add(new Tile(TileType.BAMBOO, 1));
-        tiles.add(new Tile(TileType.BAMBOO, 2));
-        tiles.add(new Tile(TileType.BAMBOO, 3));
+        tiles.add(new Tile(TileType.DOTS, 1));
+        tiles.add(new Tile(TileType.DOTS, 2));
+        tiles.add(new Tile(TileType.DOTS, 3));
+        tiles.add(new Tile(TileType.DOTS, 4));
+        tiles.add(new Tile(TileType.DOTS, 5));
+        tiles.add(new Tile(TileType.DOTS, 6));
         tiles.add(new Tile(TileType.DRAGONS, 3));
         tiles.add(new Tile(TileType.DRAGONS, 3));
-        List<TileHandState> state = buildState(tiles);
+        List<TileHandState> state = buildState(tiles, melds);
         List<TileHandState> finalState = buildMelds(state);
-        for(int id = 0; id < finalState.size(); id++) {
+/*        for(int id = 0; id < finalState.size(); id++) {
             finalState.get(id).printState();
+            int score = getScoreFromState(finalState.get(id), false);
+            System.out.println("Fan = " + score);
+        }*/
+        TileHandState maxState = getMaximumScoreState(finalState);
+        int score = getScoreFromState(maxState, true);
+        System.out.println("Fan = " + score);
+    }
+
+    public static List<Meld> getShownMelds(List<Tile> tiles) {
+        List<Meld> melds = new ArrayList<>();
+        for(int id = 0; id < tiles.size(); id += 3) {
+            Tile fst = tiles.get(id);
+            Tile snd = tiles.get(id + 1);
+            Tile thd = tiles.get(id + 2);
+            melds.add(new Meld(checkValidTriple(fst, snd, thd), fst));
         }
+        return melds;
     }
 
     public static void printStates(List<TileHandState> original) {
