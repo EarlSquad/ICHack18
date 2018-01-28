@@ -16,6 +16,9 @@ public class RoomManager {
   private static final String WINNER = "winner";
 
   private FirebaseDatabase database = FirebaseDatabase.getInstance();
+  private String currentRoomName;
+  private String userName;
+  private String userId;
 
   public static RoomManager getInstance() {
     return INSTANCE;
@@ -66,6 +69,11 @@ public class RoomManager {
 
       }
     });
+  }
+
+  public void waitForRoomFull(final RoomFullListener listener) {
+    assert currentRoomName != null;
+    waitForRoomFull(currentRoomName, listener);
   }
 
   public void waitForRoomFull(String roomName, final RoomFullListener listener) {
@@ -125,5 +133,32 @@ public class RoomManager {
 
       }
     });
+  }
+
+  public RoomManager setCurrentRoomName(String currentRoomName) {
+    this.currentRoomName = currentRoomName;
+    return this;
+  }
+
+  public RoomManager setUserName(String userName) {
+    this.userName = userName;
+    return this;
+  }
+
+  public RoomManager setUserId(String userId) {
+    this.userId = userId;
+    return this;
+  }
+
+  public String getCurrentRoomName() {
+    return currentRoomName;
+  }
+
+  public String getUserName() {
+    return userName;
+  }
+
+  public String getUserId() {
+    return userId;
   }
 }

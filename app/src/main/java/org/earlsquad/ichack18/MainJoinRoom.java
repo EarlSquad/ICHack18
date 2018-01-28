@@ -22,7 +22,7 @@ public class MainJoinRoom extends AppCompatActivity {
     }
   }
 
-  private void joinRoom(String roomName, String userName) {
+  private void joinRoom(final String roomName, final String userName) {
     RoomManager.getInstance().joinRoom(roomName, userName, new JoinRoomListener() {
       @Override
       public void roomFullError() {
@@ -31,7 +31,8 @@ public class MainJoinRoom extends AppCompatActivity {
 
       @Override
       public void joinSuccessful(String userId) {
-        startActivity(new Intent(MainJoinRoom.this, Room.class));
+        RoomManager.getInstance().setCurrentRoomName(roomName).setUserName(userName).setUserId(userId);
+        startActivity(new Intent(MainJoinRoom.this, WaitingForPlayer.class));
       }
     });
   }
