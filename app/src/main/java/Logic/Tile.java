@@ -30,4 +30,19 @@ public class Tile {
     public String toString() {
         return type + " " + number;
     }
+
+    @Override
+    public int hashCode() {
+        return type.ordinal() * 10 + number;
+    }
+
+    @Override
+    public boolean equals(Object other) {
+        if(!(other instanceof Tile)) {
+            return false;
+        } else {
+            Tile otherTile = (Tile) other;
+            return otherTile.toString().equals(toString());
+        }
+    }
 }

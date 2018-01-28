@@ -6,11 +6,11 @@ package Logic;
 
 public class Meld {
     private MeldType meldType;
-    private TileType tileType;
+    private Tile tile;
 
-    public Meld(MeldType meldType, TileType tileType) {
+    public Meld(MeldType meldType, Tile tile) {
         this.meldType = meldType;
-        this.tileType = tileType;
+        this.tile = tile;
     }
 
     public MeldType getMeldType() {
@@ -18,19 +18,19 @@ public class Meld {
     }
 
     public TileType getTileType() {
-        return tileType;
+        return tile.getType();
     }
 
     public void setMeldType(MeldType meldType) {
         this.meldType = meldType;
     }
 
-    public void setTileType(TileType tileType) {
-        this.tileType = tileType;
+    public void setTile(Tile tile) {
+        this.tile = tile;
     }
 
     @Override
     public String toString() {
-        return meldType + " " + tileType;
+        return meldType + " " + tile;
     }
 }
