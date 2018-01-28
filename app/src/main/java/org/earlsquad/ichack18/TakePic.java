@@ -118,9 +118,17 @@ public class TakePic extends AppCompatActivity {
             public void onClick(DialogInterface dialog, int which) {
                 String strName = arrayAdapter.getItem(which);
                 loser          = strName;
+                goToCamera();
             }
         });
         builderSingle.show();
+    }
+
+    private void goToCamera() {
+        Intent intent = new Intent(TakePic.this, CameraActivity.class);
+        intent.putExtra("winner", winner);
+        intent.putExtra("loser", loser);
+        startActivity(intent);
     }
 
     private void showDraw() {
