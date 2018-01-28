@@ -9,17 +9,54 @@ import android.provider.MediaStore;
 import android.support.v4.content.FileProvider;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.ImageView;
+import org.opencv.android.BaseLoaderCallback;
+import org.opencv.android.LoaderCallbackInterface;
+import org.opencv.android.OpenCVLoader;
+import org.opencv.android.Utils;
+import org.opencv.core.*;
+import org.opencv.imgproc.Imgproc;
 
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
   private static final int REQUEST_TAKE_PHOTO = 111;
   private String mCurrentPhotoPath;
+  private BaseLoaderCallback mLoaderCallback = new BaseLoaderCallback(this) {
+    @Override
+    public void onManagerConnected(int status) {
+      switch (status) {
+        case LoaderCallbackInterface.SUCCESS: {
+          Log.i("OpenCV", "OpenCV loaded successfully");
+        }
+        break;
+        default: {
+          super.onManagerConnected(status);
+        }
+        break;
+      }
+    }
+  };
+
+  @Override
+  public void onResume() {
+    super.onResume();
+    if (!OpenCVLoader.initDebug()) {
+      Log.d("OpenCV", "Internal OpenCV library not found. Using OpenCV Manager for initialization");
+      OpenCVLoader.initAsync(OpenCVLoader.OPENCV_VERSION_3_0_0, this, mLoaderCallback);
+    } else {
+      Log.d("OpenCV", "OpenCV library found inside package. Using it!");
+      mLoaderCallback.onManagerConnected(LoaderCallbackInterface.SUCCESS);
+    }
+  }
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -71,7 +108,33 @@ public class MainActivity extends AppCompatActivity {
   protected void onActivityResult(int requestCode, int resultCode, Intent data) {
     if (requestCode == REQUEST_TAKE_PHOTO && resultCode == RESULT_OK) {
       Bitmap imageBitmap = BitmapFactory.decodeFile(mCurrentPhotoPath);
-      ((ImageView) findViewById(R.id.image_view)).setImageBitmap(imageBitmap);
+      ((ImageView) findViewById(R.id.image_view)).setImageBitmap(processBitmap(imageBitmap));
+
+//      CaptureHelper helper = new CaptureHelper(imageBitmap, getResources(), "org.earlsquad.ichack18", 1);
+//      try {
+//        helper.identifyTiles();
+//      } catch (Exception e) {
+//        e.printStackTrace();
+//      }
+//      Log.d("detected", Arrays.toString(helper.detectedTileNames));
     }
   }
+
+  private Bitmap processBitmap(Bitmap bitmap) {
+    Mat mat = new Mat();
+    Utils.bitmapToMat(bitmap, mat);
+
+    Mat gray = mat.clone();
+    Mat resultMat = mat.clone();
+    Imgproc.cvtColor(mat, gray, Imgproc.COLOR_RGB2GRAY);
+    Imgproc.adaptiveThreshold(gray, resultMat, 255, Imgproc.ADAPTIVE_THRESH_MEAN_C, Imgproc.THRESH_BINARY, 15, 12);
+    List<MatOfPoint> contours = new ArrayList<>();
+    Imgproc.findContours(resultMat, contours, new Mat(), Imgproc.RETR_FLOODFILL, Imgproc.CHAIN_APPROX_SIMPLE);
+//    Imgproc.drawContours(resultMat, contours, -1, new Scalar(0,255,0), 3);
+
+    Bitmap resultBitmap = Bitmap.createBitmap(bitmap);
+    Utils.matToBitmap(resultMat, resultBitmap);
+    return resultBitmap;
+  }
 }
+
