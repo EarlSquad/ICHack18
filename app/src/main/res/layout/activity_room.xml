@@ -20,7 +20,7 @@
             tools:context="org.earlsquad.ichack18.MainRoomCreation">
 
             <TextView
-                android:id="@+id/textView10"
+                android:id="@+id/room_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
@@ -37,8 +37,8 @@
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="31dp"
                 android:layout_marginStart="31dp"
-                android:layout_toEndOf="@+id/textView10"
-                android:layout_toRightOf="@+id/textView10"
+                android:layout_toEndOf="@+id/room_name"
+                android:layout_toRightOf="@+id/room_name"
                 android:text="Cycle" />
 
 
@@ -110,7 +110,7 @@
                     app:srcCompat="@mipmap/majongman" />
 
                 <TextView
-                    android:id="@+id/textView21"
+                    android:id="@+id/player1_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_alignLeft="@+id/imageView23"
@@ -124,13 +124,13 @@
                     android:id="@+id/imageView22"
                     android:layout_width="111dp"
                     android:layout_height="wrap_content"
-                    android:layout_alignLeft="@+id/textView21"
-                    android:layout_alignStart="@+id/textView21"
-                    android:layout_below="@+id/textView21"
+                    android:layout_alignLeft="@+id/player1_name"
+                    android:layout_alignStart="@+id/player1_name"
+                    android:layout_below="@+id/player1_name"
                     app:srcCompat="@mipmap/majongman2" />
 
                 <TextView
-                    android:id="@+id/textView23"
+                    android:id="@+id/player2_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_alignParentLeft="true"
@@ -146,19 +146,19 @@
                     android:layout_height="wrap_content"
                     android:layout_alignEnd="@+id/imageView24"
                     android:layout_alignRight="@+id/imageView24"
-                    android:layout_below="@+id/textView23"
+                    android:layout_below="@+id/player2_name"
                     app:srcCompat="@mipmap/majongman1" />
 
                 <TextView
-                    android:id="@+id/textView22"
+                    android:id="@+id/player3_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:layout_below="@+id/imageView23"
                     android:fontFamily="casual"
                     android:text="Player 3"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:layout_below="@+id/imageView23"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"/>
 
                 <ImageView
                     android:id="@+id/imageView24"
@@ -166,11 +166,11 @@
                     android:layout_height="111dp"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentStart="true"
-                    android:layout_below="@+id/textView22"
+                    android:layout_below="@+id/player3_name"
                     app:srcCompat="@mipmap/majongman4" />
 
                 <TextView
-                    android:id="@+id/textView40"
+                    android:id="@+id/player4_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_alignLeft="@+id/imageView23"
@@ -214,7 +214,7 @@
                     android:id="@+id/textView28"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/textView21"
+                    android:layout_below="@+id/player1_name"
                     android:layout_toEndOf="@+id/imageView22"
                     android:layout_toRightOf="@+id/imageView22"
                     android:text="Win: "
@@ -244,7 +244,7 @@
                     android:id="@+id/textView31"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/textView23"
+                    android:layout_below="@+id/player2_name"
                     android:layout_toEndOf="@+id/imageView23"
                     android:layout_toRightOf="@+id/imageView23"
                     android:text="Win: "
@@ -274,7 +274,7 @@
                     android:id="@+id/textView34"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/textView22"
+                    android:layout_below="@+id/player3_name"
                     android:layout_toEndOf="@+id/imageView24"
                     android:layout_toRightOf="@+id/imageView24"
                     android:text="Win: "
@@ -294,7 +294,7 @@
                     android:id="@+id/textView37"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_above="@+id/textView21"
+                    android:layout_above="@+id/player1_name"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentRight="true"
                     android:fontFamily="casual"
@@ -304,7 +304,7 @@
                     android:id="@+id/textView38"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_above="@+id/textView23"
+                    android:layout_above="@+id/player2_name"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentRight="true"
                     android:fontFamily="casual"
@@ -324,7 +324,7 @@
                     android:id="@+id/textView41"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_above="@+id/textView40"
+                    android:layout_above="@+id/player4_name"
                     android:layout_alignParentEnd="true"
                     android:layout_alignParentRight="true"
                     android:fontFamily="casual"

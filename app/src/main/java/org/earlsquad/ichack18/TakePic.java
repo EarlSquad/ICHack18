@@ -1,17 +1,13 @@
 package org.earlsquad.ichack18;
 
 import android.app.AlertDialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.Toast;
-
-import java.util.ArrayList;
-import java.util.List;
+import org.earlsquad.ichack18.api.RoomManager;
 
 public class TakePic extends AppCompatActivity {
 
@@ -69,11 +65,9 @@ public class TakePic extends AppCompatActivity {
         builderSingle.setTitle("Choose the winner:");
 
         final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.select_dialog_singlechoice);
-        arrayAdapter.add("Alvis");
-        arrayAdapter.add("Noel");
-        arrayAdapter.add("Mat");
-        arrayAdapter.add("Ivan");
-        arrayAdapter.add("Terrence");
+        for (String name : RoomManager.getInstance().getAllUserNames()) {
+            arrayAdapter.add(name);
+        }
 
         final AlertDialog.Builder builderInner = new AlertDialog.Builder(this);
         builderSingle.setAdapter(arrayAdapter, new DialogInterface.OnClickListener() {
@@ -92,11 +86,9 @@ public class TakePic extends AppCompatActivity {
         builderSingle.setTitle("Choose the winner:");
 
         final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.select_dialog_singlechoice);
-        arrayAdapter.add("Alvis");
-        arrayAdapter.add("Noel");
-        arrayAdapter.add("Mat");
-        arrayAdapter.add("Ivan");
-        arrayAdapter.add("Terrence");
+        for (String name : RoomManager.getInstance().getAllUserNames()) {
+            arrayAdapter.add(name);
+        }
 
         final AlertDialog.Builder builderInner = new AlertDialog.Builder(this);
         builderSingle.setAdapter(arrayAdapter, new DialogInterface.OnClickListener() {
@@ -116,11 +108,9 @@ public class TakePic extends AppCompatActivity {
         builderSingle.setTitle("Choose the Loser:");
 
         final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.select_dialog_singlechoice);
-        arrayAdapter.add("Alvis");
-        arrayAdapter.add("Noel");
-        arrayAdapter.add("Mat");
-        arrayAdapter.add("Ivan");
-        arrayAdapter.add("Terrence");
+        for (String name : RoomManager.getInstance().getAllUserNames()) {
+            arrayAdapter.add(name);
+        }
 
         final AlertDialog.Builder builderInner = new AlertDialog.Builder(this);
         builderSingle.setAdapter(arrayAdapter, new DialogInterface.OnClickListener() {
@@ -139,11 +129,9 @@ public class TakePic extends AppCompatActivity {
         builderSingle.setTitle("Choose the winner:");
 
         final ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.select_dialog_singlechoice);
-        arrayAdapter.add("Alvis");
-        arrayAdapter.add("Noel");
-        arrayAdapter.add("Mat");
-        arrayAdapter.add("Ivan");
-        arrayAdapter.add("Terrence");
+        for (String name : RoomManager.getInstance().getAllUserNames()) {
+            arrayAdapter.add(name);
+        }
 
         final AlertDialog.Builder builderInner = new AlertDialog.Builder(this);
         builderSingle.setAdapter(arrayAdapter, new DialogInterface.OnClickListener() {

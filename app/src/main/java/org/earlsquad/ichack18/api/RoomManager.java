@@ -3,8 +3,7 @@ package org.earlsquad.ichack18.api;
 import android.util.Log;
 import com.google.firebase.database.*;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 public class RoomManager {
   private static final RoomManager INSTANCE = new RoomManager();
@@ -19,6 +18,7 @@ public class RoomManager {
   private String currentRoomName;
   private String userName;
   private String userId;
+  private List<String> allUserNames = new ArrayList<>();
 
   public static RoomManager getInstance() {
     return INSTANCE;
@@ -85,6 +85,10 @@ public class RoomManager {
         long userCount = dataSnapshot.getChildrenCount();
         if (userCount == 4) {
           Log.d(TAG, "Room is full");
+          allUserNames.clear();
+          for (DataSnapshot user : dataSnapshot.getChildren()) {
+            allUserNames.add(user.getValue(String.class));
+          }
           listener.roomFull();
         }
       }
@@ -135,9 +139,17 @@ public class RoomManager {
     });
   }
 
+  public String getCurrentRoomName() {
+    return currentRoomName;
+  }
+
   public RoomManager setCurrentRoomName(String currentRoomName) {
     this.currentRoomName = currentRoomName;
     return this;
+  }
+
+  public String getUserName() {
+    return userName;
   }
 
   public RoomManager setUserName(String userName) {
@@ -145,20 +157,16 @@ public class RoomManager {
     return this;
   }
 
-  public RoomManager setUserId(String userId) {
-    this.userId = userId;
-    return this;
-  }
-
-  public String getCurrentRoomName() {
-    return currentRoomName;
-  }
-
-  public String getUserName() {
-    return userName;
+  public List<String> getAllUserNames() {
+    return allUserNames;
   }
 
   public String getUserId() {
     return userId;
+  }
+
+  public RoomManager setUserId(String userId) {
+    this.userId = userId;
+    return this;
   }
 }
