@@ -15,13 +15,14 @@ public class Utils {
         int maxFan = 0;
         TileHandState maxState = null;
         for(int id = 0; id < states.size(); id++) {
-            maxFan = Math.max(maxFan, getScoreFromState(states.get(id), false));
+            maxFan = Math.max(maxFan, getScoreFromState(states.get(id), false).getScore());
             maxState = states.get(id);
         }
         return maxState;
     }
 
-    public static int getScoreFromState(TileHandState state, boolean showType) {
+    public static Result getScoreFromState(TileHandState state, boolean showType) {
+        Result result = new Result(0, new ArrayList<String>());
         int fan = 0;
         int max = 10;
         Hand hand = state.getHands();
@@ -61,46 +62,55 @@ public class Utils {
         if(pongCount == 0 && chowCount == 4) {
             if(showType)
                 System.out.println("Common Hand");
+                result.getWinningTypes().add("Common Hand");
             fan++;
         }
         if(pongCount == 4 && chowCount == 0) {
             if(showType)
                 System.out.println("All in Triples");
+                result.getWinningTypes().add("All in Triples");
             fan += 3;
         }
         if(simpleSuit.size() == 1 && (dragonEye || honorCount > 0)) {
             if(showType)
                 System.out.println("Mix One Suit");
+                result.getWinningTypes().add("Mix One Suit");
             fan += 3;
         } else if((simpleSuit.size() == 1 && (!dragonEye && honorCount == 0))) {
             if(showType)
                 System.out.println("All One Suit");
+                result.getWinningTypes().add("All One Suit");
             fan += 7;
         }
         if(dragonCount == 2 && dragonEye) {
             if(showType)
                 System.out.println("Small Dragon");
+                result.getWinningTypes().add("Small Dragon");
             fan  += 5;
         }
         if(dragonCount == 3) {
             if(showType)
                 System.out.println("Great Dragon");
+                result.getWinningTypes().add("Great Dragon");
             fan += 8;
         }
         if(windCount == 3 && windEye) {
             if(showType)
                 System.out.println("Small Winds");
-            return max;
+                result.getWinningTypes().add("Small Winds");
+            fan = max;
         }
         if(windCount == 4) {
             if(showType)
                 System.out.println("Great Winds");
-            return max;
+                result.getWinningTypes().add("Great Winds");
+            fan = max;
         }
         if(honorCount == 4 && (dragonEye || windEye)) {
-            return max;
+            fan = max;
         }
-        return fan;
+        result.setScore(fan);
+        return result;
     }
 
     public static List<TileHandState> buildState(List<Tile> tiles, List<Meld> shownMelds) {
@@ -188,8 +198,16 @@ public class Utils {
             System.out.println("Fan = " + score);
         }*/
         TileHandState maxState = getMaximumScoreState(finalState);
-        int score = getScoreFromState(maxState, true);
+        int score = getScoreFromState(maxState, true).getScore();
         System.out.println("Fan = " + score);
+    }
+
+    public static Result getScore(List<Tile> shownTiles, List<Tile> concealedTiles) {
+        List<Meld> shownMelds = getShownMelds(shownTiles);
+        List<TileHandState> state = buildState(concealedTiles, shownMelds);
+        List<TileHandState> finalState = buildMelds(state);
+        TileHandState maxState = getMaximumScoreState(finalState);
+        return getScoreFromState(maxState, true);
     }
 
     public static List<Meld> getShownMelds(List<Tile> tiles) {
