@@ -8,12 +8,6 @@
 
         <Button
             android:id="@+id/addBtn"
-            android:text="Initialise List"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:onClick="initialiseScoreBoard"/>
-        <Button
-            android:id="@+id/addBtn"
             android:text="Trigger List"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
