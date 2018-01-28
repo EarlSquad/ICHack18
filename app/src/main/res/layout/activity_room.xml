@@ -27,42 +27,56 @@
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="23dp"
                 android:layout_marginStart="23dp"
-                android:text="Room Name" />
+                android:text="Room" />
 
             <TextView
                 android:id="@+id/textView11"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Cycle Number"
+                android:layout_alignBottom="@+id/textView10"
+                android:layout_alignTop="@+id/textView10"
                 android:layout_marginLeft="11dp"
                 android:layout_marginStart="11dp"
-                android:layout_alignBottom="@+id/textView10"
-                android:layout_toRightOf="@+id/textView10"
                 android:layout_toEndOf="@+id/textView10"
-                android:layout_alignTop="@+id/textView10" />
+                android:layout_toRightOf="@+id/textView10"
+                android:text="Cycle" />
+
+
+
 
             <TextView
-                android:id="@+id/textView12"
+                android:id="@+id/textView24"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Wind"
-                android:layout_alignBaseline="@+id/textView11"
-                android:layout_alignBottom="@+id/textView11"
-                android:layout_toLeftOf="@+id/button3"
-                android:layout_toStartOf="@+id/button3"
-                android:layout_marginRight="28dp"
-                android:layout_marginEnd="28dp" />
+                android:layout_alignTop="@+id/textView11"
+                android:layout_marginLeft="12dp"
+                android:layout_marginStart="12dp"
+                android:layout_toEndOf="@+id/textView11"
+                android:layout_toRightOf="@+id/textView11"
+                android:text="Wind" />
+            <Button
+                android:id="@+id/button4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/paleGreen"
+                android:text="History"
+                android:textSize="10dp"
+                android:layout_alignBaseline="@+id/textView24"
+                android:layout_alignBottom="@+id/textView24"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true" />
 
             <Button
-                android:id="@+id/button3"
+                android:id="@+id/button5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentRight="true"
-                android:text="History"
-                android:background="@color/paleGreen"
-                android:layout_alignParentTop="true" />
+                android:layout_alignTop="@+id/button4"
+                android:layout_toLeftOf="@+id/button4"
+                android:layout_toStartOf="@+id/button4"
+                android:text="takePIC"
+                android:onClick="goToTakepic"/>
+
+
         </RelativeLayout>
     </LinearLayout>
 

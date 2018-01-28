@@ -18,7 +18,8 @@
         </activity>
         <activity android:name=".MainRoomCreation" />
         <activity android:name=".MainJoinRoom" />
-        <activity android:name=".Room"></activity>
+        <activity android:name=".Room" />
+        <activity android:name=".TakePic"></activity>
     </application>
 
 </manifest>
