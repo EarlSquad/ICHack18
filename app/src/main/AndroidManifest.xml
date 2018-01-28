@@ -17,7 +17,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".MainRoomCreation" />
-        <activity android:name=".MainJoinRoom"></activity>
+        <activity android:name=".MainJoinRoom" />
+        <activity android:name=".WaitingForPlayer"></activity>
     </application>
 
 </manifest>
