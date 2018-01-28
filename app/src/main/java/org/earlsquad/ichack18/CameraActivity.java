@@ -1,11 +1,19 @@
 package org.earlsquad.ichack18;
 
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import com.otaliastudios.cameraview.*;
+import org.earlsquad.ichack18.logic.Result;
+import org.earlsquad.ichack18.logic.Tile;
+import org.earlsquad.ichack18.logic.TileType;
+import org.earlsquad.ichack18.logic.Utils;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class CameraActivity extends AppCompatActivity {
   private CameraView mCameraView;
@@ -22,15 +30,52 @@ public class CameraActivity extends AppCompatActivity {
       public void onPictureTaken(byte[] jpeg) {
         super.onPictureTaken(jpeg);
         mCameraView.stop();
-        CameraUtils.decodeBitmap(jpeg, new CameraUtils.BitmapCallback() {
-          @Override
-          public void onBitmapReady(Bitmap bitmap) {
-            Log.d("CAMERA", "BITMAPREADY");
-            splitBitmap(bitmap, 14);
-          }
-        });
+        calculateScore();
+//        CameraUtils.decodeBitmap(jpeg, new CameraUtils.BitmapCallback() {
+//          @Override
+//          public void onBitmapReady(Bitmap bitmap) {
+//            Log.d("CAMERA", "BITMAPREADY");
+//            splitBitmap(bitmap, 14);
+//          }
+//        });
       }
     });
+  }
+
+  private void calculateScore() {
+    List<Tile> tiles = new ArrayList<>();
+    tiles.add(new Tile(TileType.DOTS, 3));
+    tiles.add(new Tile(TileType.DOTS, 3));
+    tiles.add(new Tile(TileType.DOTS, 3));
+    tiles.add(new Tile(TileType.DOTS, 2));
+    tiles.add(new Tile(TileType.DOTS, 2));
+    tiles.add(new Tile(TileType.DOTS, 2));
+    tiles.add(new Tile(TileType.DOTS, 1));
+    tiles.add(new Tile(TileType.DOTS, 2));
+    tiles.add(new Tile(TileType.DOTS, 3));
+    tiles.add(new Tile(TileType.DOTS, 4));
+    tiles.add(new Tile(TileType.DOTS, 5));
+    tiles.add(new Tile(TileType.DOTS, 6));
+    tiles.add(new Tile(TileType.DRAGONS, 3));
+    tiles.add(new Tile(TileType.DRAGONS, 3));
+    Result result = Utils.getResult(new ArrayList<Tile>(), tiles);
+
+    StringBuilder sb = new StringBuilder();
+    for (String win : result.getWinningTypes()) {
+      sb.append(win);
+      sb.append(" ");
+    }
+
+    AlertDialog.Builder builder = new AlertDialog.Builder(this);
+    builder.setTitle("Congrats!")
+        .setMessage("Score: " + 13 + "\nWinning Combo: " + sb.toString())
+        .setPositiveButton("YAY", new DialogInterface.OnClickListener() {
+          @Override
+          public void onClick(DialogInterface dialogInterface, int i) {
+            startActivity(new Intent(CameraActivity.this, Room.class));
+          }
+        })
+        .show();
   }
 
   private Bitmap[] splitBitmap(Bitmap bitmap, int pieces) {

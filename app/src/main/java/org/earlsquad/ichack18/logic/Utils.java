@@ -202,7 +202,7 @@ public class Utils {
         System.out.println("Fan = " + score);
     }
 
-    public static Result getScore(List<Tile> shownTiles, List<Tile> concealedTiles) {
+    public static Result getResult(List<Tile> shownTiles, List<Tile> concealedTiles) {
         List<Meld> shownMelds = getShownMelds(shownTiles);
         List<TileHandState> state = buildState(concealedTiles, shownMelds);
         List<TileHandState> finalState = buildMelds(state);
@@ -212,11 +212,13 @@ public class Utils {
 
     public static List<Meld> getShownMelds(List<Tile> tiles) {
         List<Meld> melds = new ArrayList<>();
-        for(int id = 0; id < tiles.size(); id += 3) {
-            Tile fst = tiles.get(id);
-            Tile snd = tiles.get(id + 1);
-            Tile thd = tiles.get(id + 2);
-            melds.add(new Meld(checkValidTriple(fst, snd, thd), fst));
+        if(!tiles.isEmpty()) {
+            for (int id = 0; id < tiles.size(); id += 3) {
+                Tile fst = tiles.get(id);
+                Tile snd = tiles.get(id + 1);
+                Tile thd = tiles.get(id + 2);
+                melds.add(new Meld(checkValidTriple(fst, snd, thd), fst));
+            }
         }
         return melds;
     }
