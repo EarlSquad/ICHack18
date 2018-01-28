@@ -20,7 +20,8 @@
         <activity android:name=".MainJoinRoom" />
         <activity android:name=".WaitingForPlayer"/>
         <activity android:name=".Room" />
-        <activity android:name=".TakePic"/>
+        <activity android:name=".TakePic" />
+        <activity android:name=".ScoreBoard"></activity>
     </application>
 
 </manifest>
