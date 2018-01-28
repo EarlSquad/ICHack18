@@ -1,6 +1,7 @@
 package org.earlsquad.ichack18;
 
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -25,10 +26,21 @@ public class CameraActivity extends AppCompatActivity {
           @Override
           public void onBitmapReady(Bitmap bitmap) {
             Log.d("CAMERA", "BITMAPREADY");
+            splitBitmap(bitmap, 14);
           }
         });
       }
     });
+  }
+
+  private Bitmap[] splitBitmap(Bitmap bitmap, int pieces) {
+    Bitmap[] tiles = new Bitmap[pieces];
+    int crop = 900;
+    Bitmap row = Bitmap.createBitmap(bitmap, 0, crop, bitmap.getWidth(), bitmap.getHeight()-2*900);
+    for (int i = 0; i < pieces; i++) {
+      tiles[i] = Bitmap.createBitmap(row, i*bitmap.getWidth()/pieces, 0, bitmap.getWidth()/pieces, bitmap.getHeight());
+    }
+    return tiles;
   }
 
   @Override
