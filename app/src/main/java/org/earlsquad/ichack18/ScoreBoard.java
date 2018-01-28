@@ -33,11 +33,12 @@ public class ScoreBoard extends ListActivity {
                 android.R.layout.simple_list_item_1,
                 listItems);
         setListAdapter(adapter);
+        listItems.add("Game number" + "  P1Name  P2Name  P3Name  P4Name");
+        adapter.notifyDataSetChanged();
     }
 
         public void initialiseScoreBoard(View V) {
-            listItems.add("Game number" + "  P1Name  P2Name  P3Name  P4Name");
-            adapter.notifyDataSetChanged();
+
         }
 
     //METHOD WHICH WILL HANDLE DYNAMIC INSERTION
