@@ -19,7 +19,8 @@
         <activity android:name=".MainRoomCreation" />
         <activity android:name=".MainJoinRoom" />
         <activity android:name=".Room" />
-        <activity android:name=".TakePic"></activity>
+        <activity android:name=".TakePic" />
+        <activity android:name=".ScoreBoard"></activity>
     </application>
 
 </manifest>

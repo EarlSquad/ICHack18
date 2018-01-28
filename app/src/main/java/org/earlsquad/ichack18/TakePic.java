@@ -3,9 +3,12 @@ package org.earlsquad.ichack18;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,8 +24,12 @@ public class TakePic extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_takepic);
         showPopUp2();
-
     }
+
+    public void goToScoreBoard(View v) {
+        startActivity(new Intent(TakePic.this, ScoreBoard.class));
+    }
+
 
     private void showPopUp2() {
 

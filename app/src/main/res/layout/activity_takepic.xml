@@ -14,6 +14,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="203dp"
-        android:text="Take a Picture" />
+        android:text="Take a Picture"
+        android:onClick="goToScoreBoard"/>
 
 </RelativeLayout>
