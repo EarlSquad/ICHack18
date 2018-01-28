@@ -17,7 +17,7 @@
         app:srcCompat="@mipmap/joiningroom" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/join_room_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/button2"
@@ -26,7 +26,19 @@
         android:ems="10"
         android:fontFamily="casual"
         android:inputType="textPersonName"
-        android:hint="What is the name of the room ?" />
+        android:hint="What is the name of the room?" />
+
+    <EditText
+        android:id="@+id/join_user_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:fontFamily="casual"
+        android:hint="What is your name?"
+        android:inputType="textPersonName"
+        android:layout_above="@+id/button2"
+        android:layout_alignLeft="@+id/join_room_name"
+        android:layout_alignStart="@+id/join_room_name"/>
 
     <Button
         android:id="@+id/button2"
