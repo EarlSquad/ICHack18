@@ -1,4 +1,4 @@
-package Logic;
+package org.earlsquad.ichack18.logic;
 
 import java.util.ArrayList;
 import java.util.List;

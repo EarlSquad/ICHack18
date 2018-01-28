@@ -1,11 +1,7 @@
-package Logic;
+package org.earlsquad.ichack18.logic;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * Created by cheun on 27/1/2018.
